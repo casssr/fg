@@ -1389,7 +1389,27 @@ $(document).click(function () {
     }
 });
   </script>
+	// popup
+		<script>
+		
 
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const popup = document.getElementById("infoPopup");
+  const buttons = document.querySelectorAll(".popup-buttons button");
+
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      popup.style.display = "none";
+    });
+  });
+
+});
+
+
+	</script>
+<!-- popup -->
     <script>
         <!-- code by OD 
         -->
@@ -1405,15 +1425,8 @@ $(document).click(function () {
 
     <script>
         /*<![CDATA[*/ cookieChoices = {}; /*]]>*/
- <script>
-		
 
-function closeInfoPopup() {
-  document.getElementById("infoPopup").style.display = "none";
-}
-
-	</script>
-
+	
 
 </body>
 
