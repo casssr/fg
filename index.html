@@ -87,26 +87,27 @@
 
 <body>
 	
-<div id="welcomePopup" class="welcome-overlay">
-  <div class="welcome-popup">
 
-    <button class="popup-close" onclick="closePopup()">×</button>
+<div id="infoPopup" class="popup-overlay">
 
-    <p class="popup-label">WELCOME</p>
+  <div class="popup-box">
 
-    <h1>Something Great Starts Here.</h1>
+    <h2>Important Information</h2>
 
     <p>
-      Welcome to our website. Explore our services,
-      discover what we offer and enjoy your experience.
+      Welcome! We have an important announcement for our visitors.
+      Please read this information before continuing to explore our website.
     </p>
 
-    <button class="enter-button" onclick="closePopup()">
-      ENTER WEBSITE →
-    </button>
+    <div class="popup-buttons">
+      <button onclick="closeInfoPopup()">CANCEL</button>
+      <button onclick="closeInfoPopup()">OK</button>
+    </div>
 
   </div>
+
 </div>
+<!-- popup -->
 
     <style>
         .blink {
@@ -132,87 +133,82 @@
 
     <style>
 
-.welcome-overlay {
+
+.popup-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.65);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 99999;
   padding: 20px;
+  z-index: 999999;
 }
 
-.welcome-popup {
-  background: white;
+.popup-box {
+  background: #ffffff;
   width: 100%;
-  max-width: 550px;
-  padding: 50px 35px;
-  border-radius: 15px;
-  text-align: center;
-  position: relative;
-  animation: popupAppear 0.4s ease;
+  max-width: 450px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  animation: popupFade 0.3s ease;
 }
 
-.popup-label {
-  color: #087a45;
-  font-weight: bold;
-  letter-spacing: 3px;
-  font-size: 12px;
+.popup-box h2 {
+  font-size: 23px;
+  margin-bottom: 15px;
+  color: #222;
 }
 
-.welcome-popup h1 {
-  font-size: 34px;
-  margin: 18px 0;
-}
-
-.welcome-popup p {
+.popup-box p {
   color: #666;
+  font-size: 15px;
   line-height: 1.7;
 }
 
-.enter-button {
-  background: #087a45;
-  color: white;
-  border: none;
-  padding: 15px 30px;
+.popup-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
   margin-top: 25px;
+}
+
+.popup-buttons button {
+  padding: 12px 24px;
+  border: none;
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
 }
 
-.popup-close {
-  position: absolute;
-  top: 12px;
-  right: 18px;
-  border: none;
-  background: none;
-  font-size: 28px;
-  cursor: pointer;
+.popup-buttons button:first-child {
+  background: #eeeeee;
+  color: #333;
 }
 
-@keyframes popupAppear {
+.popup-buttons button:last-child {
+  background: #087a45;
+  color: white;
+}
+
+@keyframes popupFade {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@media (max-width: 600px) {
-  .welcome-popup {
-    padding: 45px 22px;
-  }
-
-  .welcome-popup h1 {
-    font-size: 26px;
+@media(max-width: 500px) {
+  .popup-box {
+    padding: 24px 20px;
   }
 }
+
 /* for the poppup */
 
         
@@ -1409,10 +1405,15 @@ $(document).click(function () {
 
     <script>
         /*<![CDATA[*/ cookieChoices = {}; /*]]>*/
-    
-function closePopup() {
-  document.getElementById("welcomePopup").style.display = "none";
+ <script>
+		
+
+function closeInfoPopup() {
+  document.getElementById("infoPopup").style.display = "none";
 }
+
+	</script>
+
 
 </body>
 
